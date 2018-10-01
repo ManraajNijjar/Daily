@@ -5,9 +5,10 @@ public class canSumToo {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int valueToCheck = 17;
-		int[] valueList = new int[] {10, 15, 3};
-		System.out.println(canSum(valueToCheck, valueList));
+		int valueToCheck = 18;
+		int[] valueList = new int[] {10, 15, 3, 7};
+		//System.out.println(canSum(valueToCheck, valueList));
+		System.out.println(matrixSum(valueToCheck, valueList));
 	}
 	
 	public static boolean canSum(int K, int[] values) {
@@ -22,6 +23,24 @@ public class canSumToo {
 		return false;
 	}
 	
-	
+	//Takes up more memory and isn't really a single pass but I just wanted to implement it
+	public static boolean matrixSum(int K, int[] values) {
+		int[][] valueMatrix = new int[values.length][values.length];
+		for(int x = 0; x < values.length; x++) {
+			for(int z = 0; z < values.length; z++) {
+				valueMatrix[z][x] += values[x];
+			}
+			
+			for(int y = 0; y < values.length; y++) {
+				valueMatrix[x][y] += values[x];
+				if(valueMatrix[x][y] == K && x != y) {
+					return true;
+				}
+			}
+		}
+		
+		
+		return false;
+	}
 
 }
