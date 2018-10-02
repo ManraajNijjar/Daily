@@ -10,8 +10,13 @@ public class multiplyArray {
 		
 	}
 	
+	//Given an array of integers, return a new array such that each element at index i of the new array 
+	//is the product of all the numbers in the original array except the one at i.
+	//Follow-up: what if you can't use division?
+
+
 	
-	//Quick brute force solution with O(N^2)
+	//Quick brute force solution with O(N^2) not using the division 
 	public static int[] multiplyArrayBruteForce(int[] valueList ) {
 		int[] bigArray = new int[valueList.length];
 		for(int x = 0; x < valueList.length; x++) {
