@@ -1,11 +1,15 @@
 
 public class nodeSerialization {
+	
+	//Given the root to a binary tree, implement serialize(root), which serializes the tree into a string, 
+	//and deserialize(s), which deserializes the string back into the tree.
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Node node = new Node("root", new Node("left", new Node("left.left")), new Node("right"));
 		System.out.println(serialize(node));
 	}
+	
 	
 
 	public static String serialize(Node node) {
