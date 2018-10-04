@@ -54,6 +54,14 @@ public class nodeSerialization {
 		}
 		return null;
 	}
+	
+	//Their version is similar to mine but much cleaner both in legibility as a program as well as a string
+	public static String bestSerialize(Node node) {
+		if(node == null) {
+			return "#";
+		}
+		return "(" + node.value + "(" + bestSerialize(node.left) + ")("+ bestSerialize(node.right)  +"))";
+	}
 
 }
 
